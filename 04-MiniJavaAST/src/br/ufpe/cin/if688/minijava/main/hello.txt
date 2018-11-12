@@ -1,0 +1,5 @@
+class Sum{
+public static Void main(String[] a){
+	System.out.println(1+1);
+}
+}

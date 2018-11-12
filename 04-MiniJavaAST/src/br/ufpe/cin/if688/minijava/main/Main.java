@@ -16,6 +16,10 @@ import br.ufpe.cin.if688.minijava.ast.VarDecl;
 import br.ufpe.cin.if688.minijava.ast.VarDeclList;
 import br.ufpe.cin.if688.minijava.visitor.PrettyPrintVisitor;
 
+import br.ufpe.cin.if688.minijava.AntlrGen.ASTLexer;
+import br.ufpe.cin.if688.minijava.AntlrGen.ASTParser;
+import br.ufpe.cin.if688.minijava.AntlrGen.ASTVisitor;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -60,10 +64,9 @@ public class Main {
 		cdl.addElement(B);
 		cdl.addElement(C);
 
-		Program p = new Program(main, cdl);
-		
-		PrettyPrintVisitor ppv = new PrettyPrintVisitor();
-		ppv.visit(p);
+
+		Program prog;
+		prog.accept(new PrettyPrintVisitor());
 	}
 
 }
